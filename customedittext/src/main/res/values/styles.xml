@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--Image edit text-->
     <style name="view_layout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/view_height</item>
@@ -9,14 +10,23 @@
         <item name="android:background">@drawable/edittext_bg_line</item>
     </style>
 
-    <style name="edit_text_image_left">
-        <item name="android:layout_width">@dimen/edit_text_image_width</item>
-        <item name="android:layout_height">@dimen/edit_text_image_height</item>
-        <item name="collapseContentDescription">@string/blank</item>
+    <style name="edit_text_image">
+        <item name="android:layout_width">@dimen/edit_text_image_size</item>
+        <item name="android:layout_height">@dimen/edit_text_image_size</item>
+        <item name="contentDescription">@string/blank</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:layout_marginBottom">1dp</item>
+    </style>
+
+    <style name="edit_text_image_left" parent="edit_text_image">
         <item name="android:layout_alignParentLeft">true</item>
         <item name="android:layout_alignParentBottom">true</item>
-        <item name="android:layout_marginBottom">1dp</item>
         <item name="android:src">@drawable/ic_user</item>
+    </style>
+
+    <style name="edit_text_image_right" parent="edit_text_image">
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:src">@drawable/ic_un_view</item>
     </style>
 
     <style name="edit_text">
@@ -25,8 +35,15 @@
         <item name="android:background">@null</item>
         <item name="android:hint">@string/edit_text_hint</item>
         <item name="android:imeOptions">actionDone</item>
-        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginLeft">0dp</item>
         <item name="android:textSize">@dimen/edit_text_text_size</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/edit_text_text_color</item>
+        <item name="android:textColorHint">@color/edit_text_hint_color</item>
+        <item name="android:inputType">textCapSentences</item>
+        <item name="android:maxLines">1</item>
     </style>
 
 </resources>

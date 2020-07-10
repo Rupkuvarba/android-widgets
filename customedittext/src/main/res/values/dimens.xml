@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="view_height">60dp</dimen>
+    <!--http://www.programmingfacts.com/how-to-define-dimens-xml-for-every-different-screen-size-in-android/-->
+
+    <dimen name="view_height">50dp</dimen>
     <dimen name="view_margin_top">10dp</dimen>
 
     <dimen name="edit_text_text_size">16dp</dimen>
-    <dimen name="edit_text_image_width">40dp</dimen>
-    <dimen name="edit_text_image_height">40dp</dimen>
+    <dimen name="edit_text_image_size">40dp</dimen>
+    <dimen name="edit_text_image_right_size">30dp</dimen>
 
 </resources>

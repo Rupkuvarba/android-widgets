@@ -1,0 +1,7 @@
+<resources>
+
+    <!--samSung and nexus 4 device call-->
+
+    <dimen name="edit_text_image_size">40dp</dimen>
+
+</resources>
