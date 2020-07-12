@@ -3,9 +3,13 @@ package com.app.customedittext;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
+import android.text.InputFilter;
+import android.text.method.PasswordTransformationMethod;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -26,7 +30,12 @@ public class CustomImageEditText extends LinearLayout {
     private ImageView ivEtRight;
     private EditText editText;
 
+    //ImageView
     private int drawableId = 0;
+
+    //EditText
+    private int imeOptions;
+    private int inputType;
 
     public CustomImageEditText(Context context) {
         this(context, null);
@@ -56,6 +65,15 @@ public class CustomImageEditText extends LinearLayout {
         //Show left image
         drawableId = styleable.getResourceId(R.styleable.CustomEditText_cie_iv_left_src, 0);
         showLeftDrawable();
+
+        //Ime options
+        imeOptions = styleable.getInt(R.styleable.CustomEditText_android_imeOptions, 0);
+        setImeOptions(imeOptions);
+
+        //Input type
+        inputType = styleable.getInt(R.styleable.CustomEditText_android_inputType, EditorInfo.TYPE_TEXT_VARIATION_NORMAL);
+        setInputType(inputType);
+
     }
 
     public RelativeLayout getRlView() {
@@ -93,5 +111,22 @@ public class CustomImageEditText extends LinearLayout {
         }
     }
 
+    public void setInputType(int inputType) {
+        setInputType(inputType, false);
+    }
+
+    public void setInputType(int inputType, boolean isPassword) {
+        editText.setInputType(inputType);
+        if (isPassword)
+            editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+    }
+
+    /**
+     * Change the editor type integer associated with the text view, which
+     * is reported to an Input Method Editor (IME) with when it has focus.
+     */
+    public void setImeOptions(int imeOptions) {
+        editText.setImeOptions(imeOptions);
+    }
 
 }

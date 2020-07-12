@@ -11,17 +11,29 @@
     <com.app.customedittext.CustomImageEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:imeOptions="actionNext"
+        android:inputType="text"
         app:cie_iv_left_src="@drawable/ic_user"/>
 
     <com.app.customedittext.CustomImageEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:imeOptions="actionNext"
+        android:inputType="textEmailAddress"
         app:cie_iv_left_src="@drawable/ic_email"/>
 
     <com.app.customedittext.CustomImageEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
         app:cie_iv_left_src="@drawable/ic_password"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:visibility="gone"/>
 
 
 </LinearLayout>
