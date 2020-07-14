@@ -5,4 +5,9 @@
     <color name="edit_text_text_color">@color/black</color>
     <color name="edit_text_hint_color">#a2a2a2</color>
 
+    <color name="edit_text_image_color">#C33838</color>
+    <color name="edit_text_image_left_color">#FFC107</color>
+
+    <color name="green_color">#1AB051</color>
+
 </resources>

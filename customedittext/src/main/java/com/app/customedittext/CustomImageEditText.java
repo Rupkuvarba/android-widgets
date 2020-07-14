@@ -1,8 +1,11 @@
 package com.app.customedittext;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.text.InputFilter;
 import android.text.method.PasswordTransformationMethod;
 import android.util.AttributeSet;
@@ -36,6 +39,22 @@ public class CustomImageEditText extends LinearLayout {
     //EditText
     private int imeOptions;
     private int inputType;
+
+    public RelativeLayout getRlView() {
+        return rlView;
+    }
+
+    public ImageView getIvEtLeft() {
+        return ivEtLeft;
+    }
+
+    public EditText getEditText() {
+        return editText;
+    }
+
+    public ImageView getIvEtRight() {
+        return ivEtRight;
+    }
 
     public CustomImageEditText(Context context) {
         this(context, null);
@@ -73,35 +92,6 @@ public class CustomImageEditText extends LinearLayout {
         //Input type
         inputType = styleable.getInt(R.styleable.CustomEditText_android_inputType, EditorInfo.TYPE_TEXT_VARIATION_NORMAL);
         setInputType(inputType);
-
-    }
-
-    public RelativeLayout getRlView() {
-        return rlView;
-    }
-
-    public ImageView getIvEtLeft() {
-        return ivEtLeft;
-    }
-
-    public EditText getEditText() {
-        return editText;
-    }
-
-    public ImageView getIvEtRight() {
-        return ivEtRight;
-    }
-
-    public void setTypeface(Typeface font) {
-        editText.setTypeface(font);
-    }
-
-    public void setLeftImageResource(int imgResourse){
-        ivEtLeft.setImageResource(imgResourse);
-    }
-
-    public void setRightImageResource(int imgResourse){
-        ivEtRight.setImageResource(imgResourse);
     }
 
     public void showLeftDrawable() {
@@ -127,6 +117,51 @@ public class CustomImageEditText extends LinearLayout {
      */
     public void setImeOptions(int imeOptions) {
         editText.setImeOptions(imeOptions);
+    }
+
+    public void setCustomEdittextAttribute(){
+        //Image left color
+        setImageTintColor(CustomEdittextSDK.getInstance().getImageLeftTint());
+
+        //Edittext background and tint color
+        setEdittextBackground(CustomEdittextSDK.getInstance().getViewBackground());
+        setEdittextBackgroundTint(CustomEdittextSDK.getInstance().getBackgroundTint());
+    }
+
+    public void setImageTintColor(int color){
+        if(color != 0) {
+            int currentApiVersion = android.os.Build.VERSION.SDK_INT;
+            if (currentApiVersion >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                ivEtLeft.setImageTintList(ColorStateList.valueOf(color));
+            }
+        }
+    }
+
+    public void setEdittextBackgroundTint(int color){
+        if(color != 0) {
+            int currentApiVersion = android.os.Build.VERSION.SDK_INT;
+            if (currentApiVersion >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                rlView.setBackgroundTintList(ColorStateList.valueOf(color));
+            }
+        }
+    }
+
+    public void setEdittextBackground(Drawable drawableId){
+        if(drawableId != null) {
+            rlView.setBackground(drawableId);
+        }
+    }
+
+    public void setTypeface(Typeface font) {
+        editText.setTypeface(font);
+    }
+
+    public void setLeftImageResource(int imgResource){
+        ivEtLeft.setImageResource(imgResource);
+    }
+
+    public void setRightImageResource(int imgResource){
+        ivEtRight.setImageResource(imgResource);
     }
 
 }
