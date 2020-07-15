@@ -1,5 +1,6 @@
-package com.app.customedittext;
+package com.app.customedittext.model;
 
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 
 public class CustomEdittextSDK {
@@ -8,6 +9,7 @@ public class CustomEdittextSDK {
     private Drawable viewBackground;
     private int imageLeftTint;
     private int backgroundTint;
+    private Typeface typeface;
 
     public static synchronized CustomEdittextSDK getInstance() {
         if (customImageEditText == null)
@@ -32,5 +34,13 @@ public class CustomEdittextSDK {
 
     public int getBackgroundTint() {
         return backgroundTint;
+    }
+
+    public Typeface getTypeface() {
+        return typeface;
+    }
+
+    public void setTypeface(Typeface typeface) {
+        this.typeface = typeface;
     }
 }

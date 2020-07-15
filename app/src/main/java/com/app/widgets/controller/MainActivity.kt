@@ -1,10 +1,8 @@
-package com.app.widgets
+package com.app.widgets.controller
 
-import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import com.app.customedittext.CustomEdittextSDK
+import com.app.widgets.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

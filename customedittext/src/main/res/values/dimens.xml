@@ -8,6 +8,5 @@
 
     <dimen name="edit_text_text_size">16dp</dimen>
     <dimen name="edit_text_image_size">40dp</dimen>
-    <dimen name="edit_text_image_right_size">30dp</dimen>
 
 </resources>

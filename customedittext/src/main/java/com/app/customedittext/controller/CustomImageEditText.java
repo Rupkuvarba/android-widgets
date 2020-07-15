@@ -1,15 +1,12 @@
-package com.app.customedittext;
+package com.app.customedittext.controller;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.text.InputFilter;
 import android.text.method.PasswordTransformationMethod;
 import android.util.AttributeSet;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -19,6 +16,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
+
+import com.app.customedittext.model.CustomEdittextSDK;
+import com.app.customedittext.R;
 
 /**
  * Reference:
@@ -39,6 +39,8 @@ public class CustomImageEditText extends LinearLayout {
     //EditText
     private int imeOptions;
     private int inputType;
+
+    private String fontPath = "fonts/" + "dm_sans_medium.ttf";
 
     public RelativeLayout getRlView() {
         return rlView;
@@ -126,6 +128,9 @@ public class CustomImageEditText extends LinearLayout {
         //Edittext background and tint color
         setEdittextBackground(CustomEdittextSDK.getInstance().getViewBackground());
         setEdittextBackgroundTint(CustomEdittextSDK.getInstance().getBackgroundTint());
+
+        //Edittext Font typeface
+        setTypeface(CustomEdittextSDK.getInstance().getTypeface());
     }
 
     public void setImageTintColor(int color){
@@ -152,8 +157,16 @@ public class CustomImageEditText extends LinearLayout {
         }
     }
 
-    public void setTypeface(Typeface font) {
-        editText.setTypeface(font);
+    public void setTypeface(Typeface typeface) {
+
+        //Set default typeface, if null
+        if(typeface == null){
+            typeface = Typeface.createFromAsset(getContext().getAssets(), fontPath);
+        }
+
+        if(typeface != null) {
+            editText.setTypeface(typeface);
+        }
     }
 
     public void setLeftImageResource(int imgResource){
