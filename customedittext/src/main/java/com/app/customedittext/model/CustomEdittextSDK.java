@@ -9,6 +9,8 @@ public class CustomEdittextSDK {
     private Drawable viewBackground;
     private int imageLeftTint;
     private int backgroundTint;
+    private int etTextColor;
+    private int etHintColor;
     private Typeface typeface;
 
     public static synchronized CustomEdittextSDK getInstance() {
@@ -42,5 +44,21 @@ public class CustomEdittextSDK {
 
     public void setTypeface(Typeface typeface) {
         this.typeface = typeface;
+    }
+
+    public int getEtTextColor() {
+        return etTextColor;
+    }
+
+    public void setEtTextColor(int etTextColor) {
+        this.etTextColor = etTextColor;
+    }
+
+    public int getEtHintColor() {
+        return etHintColor;
+    }
+
+    public void setEtHintColor(int etHintColor) {
+        this.etHintColor = etHintColor;
     }
 }

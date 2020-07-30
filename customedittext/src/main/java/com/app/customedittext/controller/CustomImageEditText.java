@@ -128,9 +128,12 @@ public class CustomImageEditText extends LinearLayout {
         //Edittext background and tint color
         setEdittextBackground(CustomEdittextSDK.getInstance().getViewBackground());
         setEdittextBackgroundTint(CustomEdittextSDK.getInstance().getBackgroundTint());
+        setEdittextTextColor(CustomEdittextSDK.getInstance().getEtTextColor());
+        setEdittextHintColor(CustomEdittextSDK.getInstance().getEtHintColor());
 
         //Edittext Font typeface
         setTypeface(CustomEdittextSDK.getInstance().getTypeface());
+
     }
 
     public void setImageTintColor(int color){
@@ -166,6 +169,18 @@ public class CustomImageEditText extends LinearLayout {
 
         if(typeface != null) {
             editText.setTypeface(typeface);
+        }
+    }
+
+    public void setEdittextTextColor(int color){
+        if(color != 0) {
+            editText.setTextColor(color);
+        }
+    }
+
+    public void setEdittextHintColor(int color){
+        if(color != 0) {
+            editText.setHintTextColor(color);
         }
     }
 

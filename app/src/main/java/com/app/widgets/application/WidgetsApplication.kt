@@ -16,6 +16,11 @@ class WidgetsApplication : Application() {
             ContextCompat.getColor(this, R.color.edit_text_image_left_color),
             0
         )
+
+        //Text color
+        CustomEdittextSDK.getInstance().etTextColor = ContextCompat.getColor(this,R.color.edit_text_text_color);
+        CustomEdittextSDK.getInstance().etHintColor = ContextCompat.getColor(this,R.color.edit_text_hint_color);
+
         //Set font typeface
         CustomEdittextSDK.getInstance().typeface = getFontTypeface(this)
     }
