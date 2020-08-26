@@ -190,6 +190,10 @@ public class CustomImageEditText extends LinearLayout {
         editText.setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
     }
 
+    public void setEditText(String text){
+        editText.setText(text);
+    }
+
     public void setLeftImageResource(int imgResource){
         ivEtLeft.setImageResource(imgResource);
     }
