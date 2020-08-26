@@ -23,5 +23,8 @@ class WidgetsApplication : Application() {
 
         //Set font typeface
         CustomEdittextSDK.getInstance().typeface = getFontTypeface(this)
+
+        //Set edit text size
+        CustomEdittextSDK.getInstance().textSize = resources.getDimensionPixelSize(R.dimen.edit_text_size).toFloat();
     }
 }

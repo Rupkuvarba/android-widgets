@@ -7,6 +7,7 @@ public class CustomEdittextSDK {
 
     private static CustomEdittextSDK customImageEditText = null;
     private Drawable viewBackground;
+    private Float textSize;
     private int imageLeftTint;
     private int backgroundTint;
     private int etTextColor;
@@ -60,5 +61,13 @@ public class CustomEdittextSDK {
 
     public void setEtHintColor(int etHintColor) {
         this.etHintColor = etHintColor;
+    }
+
+    public Float getTextSize() {
+        return textSize;
+    }
+
+    public void setTextSize(Float textSize) {
+        this.textSize = textSize;
     }
 }

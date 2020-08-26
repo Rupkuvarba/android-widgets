@@ -11,7 +11,7 @@
         <attr name="android:gravity" />
 
         <attr name="cie_iv_left_src" format="reference" />
-        <!--<attr name="edt_drawable_start" format="reference" />
+        <attr name="edt_drawable_start" format="reference" />
         <attr name="edt_cursor" format="reference" />
         <attr name="edt_padding" format="reference|dimension" />
         <attr name="edt_padding_start" format="reference|dimension" />
@@ -28,7 +28,7 @@
         <attr name="edt_text_size" format="reference|dimension" />
         <attr name="edt_editable" format="boolean" />
         <attr name="edt_show_drawable" format="boolean" />
-        <attr name="edt_password_toggle" format="boolean" />-->
+        <attr name="edt_password_toggle" format="boolean" />
     </declare-styleable>
 
 </resources>

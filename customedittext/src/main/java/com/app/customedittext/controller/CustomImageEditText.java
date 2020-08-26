@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.text.method.PasswordTransformationMethod;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -130,6 +131,7 @@ public class CustomImageEditText extends LinearLayout {
         setEdittextBackgroundTint(CustomEdittextSDK.getInstance().getBackgroundTint());
         setEdittextTextColor(CustomEdittextSDK.getInstance().getEtTextColor());
         setEdittextHintColor(CustomEdittextSDK.getInstance().getEtHintColor());
+        setEditTextSize(CustomEdittextSDK.getInstance().getTextSize());
 
         //Edittext Font typeface
         setTypeface(CustomEdittextSDK.getInstance().getTypeface());
@@ -182,6 +184,10 @@ public class CustomImageEditText extends LinearLayout {
         if(color != 0) {
             editText.setHintTextColor(color);
         }
+    }
+
+    public void setEditTextSize(float size){
+        editText.setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
     }
 
     public void setLeftImageResource(int imgResource){
