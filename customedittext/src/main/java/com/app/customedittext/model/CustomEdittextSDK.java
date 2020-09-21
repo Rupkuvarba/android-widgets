@@ -70,4 +70,16 @@ public class CustomEdittextSDK {
     public void setTextSize(Float textSize) {
         this.textSize = textSize;
     }
+
+    public void setViewBackground(Drawable viewBackground) {
+        this.viewBackground = viewBackground;
+    }
+
+    public void setImageLeftTint(int imageLeftTint) {
+        this.imageLeftTint = imageLeftTint;
+    }
+
+    public void setBackgroundTint(int backgroundTint) {
+        this.backgroundTint = backgroundTint;
+    }
 }

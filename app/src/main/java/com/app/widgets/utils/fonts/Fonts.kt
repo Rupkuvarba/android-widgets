@@ -5,7 +5,7 @@ import android.graphics.Typeface
 
 object Fonts {
     // Font - paths
-    private const val FONT_REGULAR = "fonts/" + "roboto_bold.ttf"
+    private const val FONT_REGULAR = "fonts/" + "roboto_regular.ttf"
 
     @JvmStatic
     fun getFontTypeface(context: Context): Typeface {
