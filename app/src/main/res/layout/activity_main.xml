@@ -32,11 +32,14 @@
         android:inputType="textPassword"
         app:cie_iv_left_src="@drawable/ic_password"/>
 
-    <EditText
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:fontFamily="sans-serif"
-        android:visibility="gone"/>
+        android:layout_marginTop="30sp"
+        android:text="Submit"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"/>
 
 </LinearLayout>

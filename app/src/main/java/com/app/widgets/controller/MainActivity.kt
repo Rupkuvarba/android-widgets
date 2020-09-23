@@ -1,10 +1,13 @@
 package com.app.widgets.controller
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.widget.addTextChangedListener
 import com.app.widgets.R
+import com.app.widgets.utils.Utils
+import com.app.widgets.utils.fonts.Fonts
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -23,5 +26,20 @@ class MainActivity : AppCompatActivity() {
         etEmail.setEdittextTextColor(ContextCompat.getColor(this, R.color.colorAccent))
         etPassword.setEdittextBackground(ContextCompat.getDrawable(this, R.drawable.rounded_edittext));
 
+        btnSubmit.setOnClickListener(clickListener);
+        btnSubmit.typeface = Fonts.getFontTypeface(this);
     }
+
+    private val clickListener = View.OnClickListener { view ->
+        when (view.id){
+            R.id.btnSubmit -> submitData()
+        }
+    }
+
+    private fun submitData(){
+        Utils.hideKeyboard(this)
+        val inputData = "Name: "+etName.editText.text.toString() + " \nEmail: " + etEmail.editText.text.toString();
+        Toast.makeText(this, inputData, Toast.LENGTH_SHORT).show()
+    }
+
 }
