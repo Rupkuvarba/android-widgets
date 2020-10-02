@@ -10,17 +10,21 @@ class WidgetsApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
         //Set global values of custom edittext
         CustomEdittextSDK.getInstance().setGlobalValues(
-            ContextCompat.getDrawable(this, R.drawable.rounded_edittext),
-            ContextCompat.getColor(this, R.color.edit_text_image_left_color),
-            0
-        )
-        /*CustomEdittextSDK.getInstance().setGlobalValues(
+
+            //Edittext background -> For Line background set R.drawable.edittext_bg_line
             ContextCompat.getDrawable(this, R.drawable.edittext_bg_line),
-            ContextCompat.getColor(this, R.color.edit_text_image_left_color),
-            0
-        )*/
+
+            //Edittext icon color
+            ContextCompat.getColor(this, R.color.colorPrimary),
+
+            //Edittext background tint, if Edittext background -> line then set
+            //ContextCompat.getColor(this, R.color.green_color), or set 0
+
+            ContextCompat.getColor(this, R.color.colorPrimary)
+        )
 
         //Text color
         CustomEdittextSDK.getInstance().etTextColor = ContextCompat.getColor(this,R.color.edit_text_text_color);

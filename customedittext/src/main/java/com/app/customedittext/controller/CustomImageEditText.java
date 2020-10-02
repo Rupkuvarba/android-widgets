@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.text.method.PasswordTransformationMethod;
 import android.util.AttributeSet;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -40,6 +41,14 @@ public class CustomImageEditText extends LinearLayout {
     //EditText
     private int imeOptions;
     private int inputType;
+    private int maxLines, maxLength, lines, gravity;
+    private int padding;
+    private int padding_start, padding_end, padding_top, padding_bottom;
+    private int cursorDrawable = 0;
+
+    private String hintText = "";
+
+    private boolean isEditable = true;
 
     private String fontPath = "fonts/" + "dm_sans_medium.ttf";
 
@@ -95,6 +104,21 @@ public class CustomImageEditText extends LinearLayout {
         //Input type
         inputType = styleable.getInt(R.styleable.CustomEditText_android_inputType, EditorInfo.TYPE_TEXT_VARIATION_NORMAL);
         setInputType(inputType);
+
+        //Hint text
+        hintText = styleable.getString(R.styleable.CustomEditText_edt_hint);
+        isEditable = styleable.getBoolean(R.styleable.CustomEditText_edt_editable, true);
+        maxLength = styleable.getInteger(R.styleable.CustomEditText_android_maxLength, 10000);
+        maxLines = styleable.getInteger(R.styleable.CustomEditText_android_maxLines, 100);
+        lines = styleable.getInt(R.styleable.CustomEditText_android_lines, 1);
+        gravity = styleable.getInt(R.styleable.CustomEditText_android_gravity, Gravity.START);
+        padding = styleable.getDimensionPixelOffset(R.styleable.CustomEditText_edt_padding, 0);
+        padding_start = styleable.getDimensionPixelOffset(R.styleable.CustomEditText_edt_padding_start, 0);
+        padding_end = styleable.getDimensionPixelOffset(R.styleable.CustomEditText_edt_padding_end, 0);
+        padding_top = styleable.getDimensionPixelOffset(R.styleable.CustomEditText_edt_padding_top, 0);
+        padding_bottom = styleable.getDimensionPixelOffset(R.styleable.CustomEditText_edt_padding_bottom, 0);
+        cursorDrawable = styleable.getResourceId(R.styleable.CustomEditText_edt_cursor, 0);
+
     }
 
     public void showLeftDrawable() {
@@ -135,6 +159,7 @@ public class CustomImageEditText extends LinearLayout {
 
         //Edittext Font typeface
         setTypeface(CustomEdittextSDK.getInstance().getTypeface());
+        editText.setHint(hintText);
 
     }
 

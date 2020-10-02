@@ -21,10 +21,10 @@ class MainActivity : AppCompatActivity() {
         etEmail.setCustomEdittextAttribute()
         etPassword.setCustomEdittextAttribute()
 
-        etName.setImageTintColor(ContextCompat.getColor(this, R.color.green_color))
-        etEmail.setEditText("rup.barad@atharvasystem.com")
-        etEmail.setEdittextTextColor(ContextCompat.getColor(this, R.color.colorAccent))
-        etPassword.setEdittextBackground(ContextCompat.getDrawable(this, R.drawable.rounded_edittext));
+        //etName.setImageTintColor(ContextCompat.getColor(this, R.color.green_color))
+        //etEmail.setEditText("rup.barad@atharvasystem.com")
+        //etEmail.setEdittextTextColor(ContextCompat.getColor(this, R.color.colorAccent))
+        //etPassword.setEdittextBackground(ContextCompat.getDrawable(this, R.drawable.rounded_edittext));
 
         btnSubmit.setOnClickListener(clickListener);
         btnSubmit.typeface = Fonts.getFontTypeface(this);
