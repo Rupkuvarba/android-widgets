@@ -2,6 +2,28 @@
 
 1. Custom Image edittext 
 
+![alt text](https://github.com/Rupkuvarba/android-widgets/blob/master/screenshot/Screenshot7.png)
+
+
+# Setup
+
+1 - Add jitpack.io repositories to you project build.gradle
+
+allprojects {
+	repositories {
+		...
+	        maven { url 'https://jitpack.io' }
+	}
+}
+
+2- Add it as a dependency to your app build.gradle
+
+dependencies {
+  implementation 'com.github.Rupkuvarba:android-widgets:v1.0'
+}
+
+
+# Usage
 Step1: Set Edittext global value from application class
 
 
