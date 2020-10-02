@@ -40,6 +40,8 @@
         android:text="Submit"
         android:layout_gravity="center_horizontal"
         android:background="@color/colorPrimary"
+        android:textAllCaps="false"
+        android:textSize="20dp"
         android:textColor="@color/white"/>
 
 </LinearLayout>

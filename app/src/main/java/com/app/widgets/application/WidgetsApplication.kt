@@ -11,16 +11,16 @@ class WidgetsApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         //Set global values of custom edittext
-       /* CustomEdittextSDK.getInstance().setGlobalValues(
+        CustomEdittextSDK.getInstance().setGlobalValues(
             ContextCompat.getDrawable(this, R.drawable.rounded_edittext),
             ContextCompat.getColor(this, R.color.edit_text_image_left_color),
             0
-        )*/
-        CustomEdittextSDK.getInstance().setGlobalValues(
+        )
+        /*CustomEdittextSDK.getInstance().setGlobalValues(
             ContextCompat.getDrawable(this, R.drawable.edittext_bg_line),
             ContextCompat.getColor(this, R.color.edit_text_image_left_color),
             0
-        )
+        )*/
 
         //Text color
         CustomEdittextSDK.getInstance().etTextColor = ContextCompat.getColor(this,R.color.edit_text_text_color);

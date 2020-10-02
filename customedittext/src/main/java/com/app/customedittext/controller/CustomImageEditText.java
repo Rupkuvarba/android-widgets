@@ -187,6 +187,7 @@ public class CustomImageEditText extends LinearLayout {
     }
 
     public void setEditTextSize(float size){
+
         editText.setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
     }
 

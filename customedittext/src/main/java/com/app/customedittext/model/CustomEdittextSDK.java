@@ -7,7 +7,7 @@ public class CustomEdittextSDK {
 
     private static CustomEdittextSDK customImageEditText = null;
     private Drawable viewBackground;
-    private Float textSize;
+    private Float textSize = 0f;
     private int imageLeftTint;
     private int backgroundTint;
     private int etTextColor;
